@@ -55,7 +55,7 @@ export default function SignUp(){
                 if (response.status == 200){
 
                     //window.location.replace("http://localhost:3000");
-                    setRedirectTo("/");
+                    setRedirectTo("/login");
                 }
                 return response.json();
             });

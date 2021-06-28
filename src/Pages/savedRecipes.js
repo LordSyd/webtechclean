@@ -26,7 +26,7 @@ function SavedRecipes() {
             redirect: "follow",
             credentials: "include"
         }).then((response)=>{
-            if(response.status==200){
+            if(response.status===200){
                 console.log("recipe deleted!!");
                 alert("recipe deleted!!");
                 setState(true);

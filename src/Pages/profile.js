@@ -76,8 +76,7 @@ function Profile() {
         }).then((response)=>{
             if(response.status===200){
                 //console.log("recipe saved!!");
-                setRedirectTo("/login")
-                alert("works!!");
+                setRedirectTo("/login");
             }
             else{
                 console.log("fehler");
@@ -255,7 +254,7 @@ function Profile() {
                         <div className="offcanvas-body text-center ">
 
                             <div className="col-6 mx-auto">
-                                <img className="img-fluid rounded-circle" src="../resources/anas_background.png"/>
+                                <img className="img-fluid rounded-circle" src="../resources/anas_background.png" alt="teammember "/>
                             </div>
                             <div className="dropdown mt-3">
                                 <button className="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton"

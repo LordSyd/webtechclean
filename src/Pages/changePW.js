@@ -79,7 +79,7 @@ export default function ChangePW(){
 
         if (typeof password !== "undefined" && typeof confirmPassword !== "undefined") {
 
-            if (password != confirmPassword) {
+            if (password !== confirmPassword) {
                 isValid = false;
                 setErrors({password: "Passwords don't match."});
                 //errors["password"] = "Passwords don't match.";
