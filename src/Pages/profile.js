@@ -76,7 +76,7 @@ function Profile() {
             console.log(err);
         });
 
-        setRedirectTo("/");
+        setRedirectTo("/logout");
 
     }
 
