@@ -1,0 +1,12 @@
+
+
+.aboutPage .firstRow{
+    background: linear-gradient(to top, rgb(168, 255, 120), rgb(120, 255, 214));
+}
+
+.aboutPage .thirdRow {
+    background: linear-gradient(to top, rgb(168, 255, 120), rgb(120, 255, 214));
+}
+.aboutPage{
+    font-family: 'Lobster Two', normal, serif;
+}

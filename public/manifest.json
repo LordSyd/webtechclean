@@ -1,6 +1,10 @@
 {
   "short_name": "React App",
   "name": "Create React App Sample",
+  "permissions": [
+    "cookies",
+    "*://localhost:3000/"
+  ],
   "icons": [
     {
       "src": "favicon.ico",

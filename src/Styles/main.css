@@ -1,0 +1,16 @@
+
+
+.Frontpage .firstPage{
+    background: linear-gradient(to bottom, rgb(168, 255, 120), rgb(120, 255, 214));
+}
+
+.Frontpage #thirdRow{
+    background: linear-gradient(to top, rgb(168, 255, 120), rgb(120, 255, 214));
+}
+
+.Frontpage .btn{
+    background-color: #7fb414;
+}
+.btn:hover{
+    background-color: #415c0a;
+}

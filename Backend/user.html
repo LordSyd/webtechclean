@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<form action="http://localhost:8080/buildUrl" method="POST">
+  First name: <input type="text" name="fname"><br>
+  <button type="submit">Send to backend</button>
+</form>
+<h2>login</h2>
+
+<form action="http://localhost:8080/api/login" method="POST">
+    Username: <input type="text" name="username"><br>
+    Password: <input type="password" name="pwd"><br>
+    <button type="submit">Login</button>
+</form>
+
+
+<form action="http://localhost:8080/delUser_post" method="POST" rel="nofollow">
+    Username: <input type="text" name="del_username"><br>
+    Password: <input type="password" name="del_pwd"><br>
+    <button type="submit">DELETE</button>
+</form>
+
+<form action="http://localhost:8080/changePW_post" method="POST">
+    Username: <input type="text" name="username"><br>
+    Password: <input type="password" name="pwd"><br>
+    newPW: <input type="new_password" name="pwd"><br>
+    <button type="submit">ChangePW</button>
+</form>
+
+
+</body>
+</html>

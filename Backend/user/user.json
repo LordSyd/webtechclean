@@ -1,0 +1,65 @@
+{
+  "loginList": [
+    {
+      "id": 1,
+      "username": "Soulthief",
+      "email": "anas.kambal@gmail.com",
+      "password": "test"
+    },
+    {
+      "id": 2,
+      "username": "LordSyd",
+      "email": "daniel.k@hotmail.com",
+      "password": "12daniel34",
+      "pwd": "hahahhaha"
+    },
+    {
+      "id": 3,
+      "username": "gabriel.huebner",
+      "email": "gabriel.huebner@icloud.com",
+      "password": "12gabriel34"
+    },
+    {
+      "id": 4,
+      "username": "mohammad.sayyed",
+      "email": "mohammad.sayyed@yahoo.com",
+      "password": "12mohammad34"
+    },
+    {
+      "id": 5,
+      "username": "afgasgf",
+      "email": "a.kambal@hotmail.com",
+      "password": "asfasf"
+    },
+    {
+      "id": 6,
+      "username": "asf",
+      "email": "a.kambal@hotmail.coma",
+      "password": "asfasf"
+    },
+    {
+      "id": 7,
+      "username": "test213",
+      "email": "123@hotmail.com",
+      "password": "123"
+    },
+    {
+      "id": 8,
+      "username": "test2506",
+      "email": "asrhl@hotmail.com",
+      "password": "test3456"
+    },
+    {
+      "id": 9,
+      "username": "testUser1337",
+      "email": "a.kambal@hotmail.com",
+      "password": "asgfg"
+    },
+    {
+      "id": 10,
+      "username": "glurak",
+      "email": "kambal.anas@gmail.com",
+      "password": "test"
+    }
+  ]
+}

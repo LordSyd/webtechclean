@@ -1,0 +1,29 @@
+.App .jumbotron{
+  background: linear-gradient(to right, rgb(168, 255, 120), rgb(120, 255, 214));
+}
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+.App .mainApp{
+  font-family: 'Lobster Two', normal, serif;
+}
+.App .btn {
+  background-color: #7fb414;
+}
+
+.App .btn:hover{
+  background-color: #415c0a;
+}
+
+
+
+
+.App #list-heading{
+  background: linear-gradient(to top, rgba(168, 255, 120, 0.50), rgba(120, 255, 214, 0.50))
+}
+.App #recipe{
+  background-color: rgb(163, 163, 163);
+}
+

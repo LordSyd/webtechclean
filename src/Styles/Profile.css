@@ -1,0 +1,25 @@
+.Profile .layer{
+    position:relative;
+    display:inline-block;
+}
+
+
+.Profile .layer:after{
+    content:'';
+    position:absolute;
+    left:0; top:0;
+    width:100%; height:100%;
+    display:inline-block;
+    background: linear-gradient(to bottom, rgba(255, 255, 255, 0), rgb(0, 0, 0)); /* W3C */
+}
+.Profile .layer img{
+    display:block;
+}
+.Profile .card-img-top{
+    opacity: 1;
+}
+@media only screen and (max-width: 600px) {
+    .Profile .offcanvas {
+        width: 60vw;
+    }
+}
