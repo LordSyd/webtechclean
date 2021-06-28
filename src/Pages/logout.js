@@ -43,7 +43,6 @@ export default function Logout() {
 
     return (
         <div>
-            <Navbar />
             <h1>See you later!</h1>
             <button className="btn" onClick={handleClick}> Delete Cookies</button>
         </div>

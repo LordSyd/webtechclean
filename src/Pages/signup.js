@@ -10,6 +10,7 @@ export default function SignUp(){
     const [confirmPassword, setConfirmPassword] = useState("");
     const [errors, setErrors] = useState({});
     const [userInfo, setUserInfo] = useState({});
+    const [redirectTo, setRedirectTo] = useState("");
 
 
     const handleEmailChange = (e) => {
@@ -40,7 +41,7 @@ export default function SignUp(){
             setUserInfo({name: name, pwd: password, email:email});
             console.log(JSON.stringify({"username": name, "pwd": password}));
 
-            alert('User Created: ' + name);
+
 
             fetch('/api/signup', {
                 method: 'POST',
@@ -51,9 +52,10 @@ export default function SignUp(){
                 },
                 redirect: "follow"
             }).then((response) => {
-                console.log(response)
-                if (response.statusCode === 200){
-                    alert("works")
+                if (response.status == 200){
+
+                    //window.location.replace("http://localhost:3000");
+                    setRedirectTo("/");
                 }
                 return response.json();
             });
@@ -132,66 +134,72 @@ export default function SignUp(){
         return isValid;
     }
 
+    if(redirectTo){
+        console.log("redirect")
+        //setRedirectTo(false);
+        return (<Redirect to={redirectTo}/>);
+    }else{
 
     return(
         <div className="signin-wrapper">
             <div className="col-10 col-md-8 col-lg-4 justify-content-center mx-auto mt-4" >
-            <h1>Please Sign Up</h1>
-            <form onSubmit={handleSubmit}>
-                <div className="form-group">
-                    <label htmlFor="name">Username:</label>
-                    <input
-                        type="text"
-                        name="name"
-                        value={name}
-                        onChange={handleNameChange}
-                        className="form-control"
-                        placeholder="Enter name"
-                        id="name"/>
-                    <div className="text-danger">{errors.name}</div>
-                </div>
+                <h1>Please Sign Up</h1>
+                <form onSubmit={handleSubmit}>
+                    <div className="form-group">
+                        <label htmlFor="name">Username:</label>
+                        <input
+                            type="text"
+                            name="name"
+                            value={name}
+                            onChange={handleNameChange}
+                            className="form-control"
+                            placeholder="Enter name"
+                            id="name"/>
+                        <div className="text-danger">{errors.name}</div>
+                    </div>
 
-                <div className="form-group">
-                    <label htmlFor="email">Email Address:</label>
-                    <input
-                        type="text"
-                        name="email"
-                        value={email}
-                        onChange={handleEmailChange}
-                        className="form-control"
-                        placeholder="Enter email"
-                        id="email"/>
-                    <div className="text-danger">{errors.email}</div>
-                </div>
+                    <div className="form-group">
+                        <label htmlFor="email">Email Address:</label>
+                        <input
+                            type="text"
+                            name="email"
+                            value={email}
+                            onChange={handleEmailChange}
+                            className="form-control"
+                            placeholder="Enter email"
+                            id="email"/>
+                        <div className="text-danger">{errors.email}</div>
+                    </div>
 
-                <div className="form-group">
-                    <label htmlFor="password">Password:</label>
-                    <input
-                        type="password"
-                        name="password"
-                        value={password}
-                        onChange={handlePasswordChange}
-                        className="form-control"
-                        placeholder="Enter password"
-                        id="password"/>
-                    <div className="text-danger">{errors.password}</div>
-                </div>
+                    <div className="form-group">
+                        <label htmlFor="password">Password:</label>
+                        <input
+                            type="password"
+                            name="password"
+                            value={password}
+                            onChange={handlePasswordChange}
+                            className="form-control"
+                            placeholder="Enter password"
+                            id="password"/>
+                        <div className="text-danger">{errors.password}</div>
+                    </div>
 
-                <div className="form-group">
-                    <label htmlFor="password">Confirm Password:</label>
-                    <input
-                        type="password"
-                        name="confirm_password"
-                        value={confirmPassword}
-                        onChange={handleConfirmChange}
-                        className="form-control"
-                        placeholder="Confirm password"
-                        id="confirm_password"/>
-                    <div className="text-danger">{errors.confirmPassword}</div>
-                </div>
-                <input type="submit" value="Submit" className="btn btn-success mt-2"/>
-            </form>
+                    <div className="form-group">
+                        <label htmlFor="password">Confirm Password:</label>
+                        <input
+                            type="password"
+                            name="confirm_password"
+                            value={confirmPassword}
+                            onChange={handleConfirmChange}
+                            className="form-control"
+                            placeholder="Confirm password"
+                            id="confirm_password"/>
+                        <div className="text-danger">{errors.confirmPassword}</div>
+                    </div>
+                    <input type="submit" value="Submit" className="btn btn-success mt-2"/>
+                </form>
             </div>
         </div>
     )
+    }
 }

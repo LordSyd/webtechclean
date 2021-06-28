@@ -254,15 +254,15 @@ app.post('/api/saveRecipe',(req,res)=>{
 
 //USERMANAGEMENT
 
-app.get('/loginForm', function(request, response){
+/*app.get('/loginForm', function(request, response){
     response.sendFile('log2_new.html', { root: '.' });
     console.log("loginForm");
-});
+});*/
 
-app.get('/signUpForm', function(request, response){
+/*app.get('/signUpForm', function(request, response){
     response.sendFile('signUp.html', { root: '.' });
     console.log("signUpForm");
-});
+});*/
 
 app.post('/api/signup', function(request, response){
     let uname=request.body.username;
@@ -284,7 +284,7 @@ app.post('/api/signup', function(request, response){
             return console.log(err);
         }
         //console.log("JSON data is saved.");
-        response.redirect("http://localhost:8080/loginForm");
+        response.sendStatus(200);
     });
 
 
@@ -327,7 +327,7 @@ app.post('/api/login',(req,res)=>{
             sess.username = userName;
 
 
-            res.redirect("http://localhost:3000/");
+            res.sendStatus(200)
 
             worked = true;
             break;
@@ -335,7 +335,7 @@ app.post('/api/login',(req,res)=>{
         }
     }
     if (!worked){
-        res.redirect("http://localhost:3000/api/login");
+        res.sendStatus(401)
     }
 
 });
@@ -416,17 +416,20 @@ app.delete('/api/deleteAcc',(req,res)=>{
     let user = JSON.parse(rawdata);
     console.log("id: "+req.params.id+"newPW: "+req.params.newPass);
     for (let i = 0; i < user.loginList.length; i++) {
-        if (user.loginList[i].username == userName){
-            console.log("deleting user....")
-            delete user.loginList[i];
-            try {
-                console.log("delete file" + `savedRecipes/${userName}.json`);
-                fs.unlinkSync(`savedRecipes/${userName}.json`);
+        if (user.loginList[i] != null) {
+
+
+            if (user.loginList[i].username === userName) {
+                console.log("deleting user....")
+                delete user.loginList[i];
+                try {
+                    console.log("delete file" + `savedRecipes/${userName}.json`);
+                    fs.unlinkSync(`savedRecipes/${userName}.json`);
+                } catch (err) {
+                    console.log(err);
+                }
+                break;
             }
-            catch (err){
-                console.log(err);
-            }
-            break;
         }
     }
 
