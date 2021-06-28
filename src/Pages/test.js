@@ -22,15 +22,7 @@ export default function Test(){
             console.log(err);
         });
 
-
         setRedirect(true);
-
-
-        //var c = Cookies.get("sessionCookie");
-
-        //c = "sessionCookie=; expires=Thu, 01 Jan 1970 00:00:00 UTC";
-
-        //document.cookie = "s=; expires=Thu, 01 Jan 1970 00:00:00 UTC";
 
     }
 

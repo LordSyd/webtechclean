@@ -63,6 +63,23 @@ function Profile() {
         })
     };
 
+    let logOut = (e) => {
+
+
+        fetch('logout', {
+            method: 'get',
+            credentials: 'include', // <--- YOU NEED THIS LINE
+            redirect: "follow"
+        }).then(res => {
+            console.log(res);
+        }).catch(err => {
+            console.log(err);
+        });
+
+        setRedirectTo("/");
+
+    }
+
     const deleteUser = (e) => {
         fetch('/api/deleteAcc', {
             method: 'DELETE',
@@ -206,6 +223,7 @@ function Profile() {
                                     <li><a  onClick={handleThis} className="btn btn-success col-12 my-1" target="_blank" rel="noreferrer">Show saved Recipes</a></li>
                                     <li><a onClick={()=>changePW()} className="btn btn-success col-12 my-1" target="_blank" rel="noreferrer">Change my Password</a></li>
                                     <li><a onClick={()=>deleteUser()} className="btn btn-success col-12 my-1" target="_blank" rel="noreferrer">Delete my Account</a></li>
+                                    <li><button onClick={logOut} className="btn btn-success col-12 my-1" >Logout</button></li>
                                 </ul>
 
                             </div>
